@@ -79,9 +79,42 @@ ReferenceError: couldn't find the variable on the memory
 
 Block Scope / Compound Statment 
 
+JS waits for 1 statement, so to use multiple statements is need to be grouped in a Compound Statement
+
+let and const are accessible only inside the Block Scope
 
 
-JS wait for 1 statement, so to use multiple statements is need to be group in a Compound Statment
+Shadowing
+
+let a = 10;
+{
+  let a = 1;
+}
+
+Declarations with the same name will get more inner scope value;
+
+The behavior is different between var and let/const
+
+Global, Block, and Script Scopes of the same Execute Context
+
+Ilegal Shadowing
+
+- Try to shadow a let using a var
+
+Shadowing may not cross the limit of the scope, but var does this, therefore if the shadowing is var -> var  both will point to the same place - change inside a scope will change inside a scope
+In the case of let -> var, JS understands var as a redeclaration of the let
+
+Nested scopes create new Scopes, but not new Context
+var is declared on the Context so can be accessible in any Scope ignoring the lexical other. 
+
+1. Code inside curly bracket is called block.
+2. Multiple statements are grouped inside a block so it can be written where JS expects single statements like in if, else, loop, function etc.
+3. Block values are stored inside separate memory than global. They are stored in block. (the reason let and const are called block scope)
+4. Shadowing of variables using var, let and const.
+5. The shadow should not cross the scope of original otherwise it will give error.
+6. shadowing let with var is illegal shadowing and gives error.
+7. var value is stored in nearest outer function or global scope and hence can be accessed outside block as well whereas same is not the case with let and const.
+
 
 
 
